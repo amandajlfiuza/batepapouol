@@ -1,15 +1,24 @@
+* {
+    box-sizing: border-box;
+}
 body {
+    width: 100vw;
+    height: 100%;
     font-family: 'Roboto', sans-serif;
     background-color: #F3F3F3;
 }
 .tela-de-entrada {
-    width: 100%;
+    width: 100vw;
     height: 100%;
     background-color: white;
     padding: 72px 57px;
     display: flex;
     flex-direction: column;
     align-items: center;
+
+    position: fixed;
+    top: 0;
+    left: 0;
 }
 .tela-de-entrada > .logo {
     width: 130px;
@@ -61,19 +70,22 @@ body {
     position: fixed;
     top: 0;
     left: 0;
+    z-index: 1;
 }
 .barra-superior > .logo {
     width: 75px;
     height: 53px;
     margin-left: 22px;
 }
-.barra-superior > .icone-menu {
+.barra-superior .icone-menu {
     font-size: 45px;
     margin-right: 22px;
 }
 .mensagens {
     margin-top: 106px;
+    margin-bottom: 106px;
     width: 100%;
+    z-index: 0;
 }
 .mensagem-status, .mensagem-normal, .mensagem-reservada {
     padding-top: 11.8px;
@@ -140,28 +152,105 @@ em {
     bottom: 0;
     left: 0;
 }
-.barra-inferior > input {
-    width: 80%;
-    margin-left: 27px;
+.mensagem-enviada {
+    margin-left: 17px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.barra-inferior input {
+    width: 75vw;
     display: flex;
     flex-wrap: wrap;
     border: 0px;
-
-    font-weight: 400;
+}
+.barra-inferior input::placeholder {
+    font-weight: 500;
     font-style: italic;
     font-size: 18px;
     line-height: 21.09px;
     color: #000000;
+}
+.info-mensagem-reservada {
+    font-weight: 300;
+    font-size: 12px;
+    line-height: 25px;
 }
 .barra-inferior > .icone-enviar {
     font-size: 26px;
     margin-right: 27px;
 }
 .menu-lateral {
-    background-color: #000000;
-    opacity: 0.6;
+    width: 100%;
+    height: 100%;
+    background-color: #00000099;
+    z-index: 2;
+
+    position: fixed;
+    top: 0;
+    left: 0;
+}
+.fora-da-sidebar {
+    width: 30%;
+    height: 100%;
+
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 3;
+}
+.sidebar {
+    width: 70%;
+    height: 100%;
+    padding: 18px;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    position: fixed;
+    top: 0;
+    right: 0;
     z-index: 2;
 }
+.texto {
+    width: 80%;
+    margin-top: 15px;
+    margin-bottom: 22px;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 18.75px;
+    text-align: center;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+.todos, .participante, .publica, .reservada {
+    width: calc(70vw - 36px);
+    margin-bottom: 7px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.esquerda {
+    display: flex;
+    align-items: center;
+}
+.icone-sidebar {
+    font-size: 25px;
+    margin-right: 7px;
+}
+.icone-check {
+    font-size: 20px;
+    color: #28BB25;
+    opacity: 0;
+}
+.ativo {
+    opacity: 1;
+}
+
+
 
 
 .oculto {

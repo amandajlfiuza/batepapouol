@@ -15,16 +15,64 @@
     <title>Bate-papo do UOL</title>
 </head>
 <body>
-    <div class="tela-de-entrada oculto">
+    <div class="tela-de-entrada">
         <img src="./imagens/logo.png" class="logo" />
         <input placeholder="Digite seu nome">
-        <button class="botao-entrar">Entrar</button>
+        <button class="botao-entrar" onclick="entrarBatePapo()">Entrar</button>
     </div>
 
-    <div class="tela-principal">
+    <div class="menu-lateral oculto">
+        <div class="fora-da-sidebar" onclick="sairMenu()"></div>
+        <div class="sidebar">
+            <div class="texto">Escolha um contato para enviar mensagem:</div>
+            <ul class="participantes">
+                <li class="todos" onclick="selecionarParticipante(this)">
+                    <div class="esquerda">
+                        <ion-icon name="people" class="icone-sidebar"></ion-icon>
+                        <div class="nome-participante">Todos</div>
+                    </div>
+                    <div class="direita">
+                        <ion-icon name="checkmark-sharp" class="icone-check"></ion-icon>
+                    </div>
+                </li>
+                <li class="participante" onclick="selecionarParticipante(this)">
+                    <div class="esquerda">
+                        <ion-icon name="person-circle-sharp" class="icone-sidebar"></ion-icon>
+                        <div class="nome-participante">João</div>
+                    </div>
+                    <div class="direita">
+                        <ion-icon name="checkmark-sharp" class="icone-check"></ion-icon>
+                    </div>
+                </li>
+            </ul>
+            <div class="texto">Escolha a visibilidade:</div>
+            <ul class="visibilidade">
+                <li class="publica" onclick="selecionarVisibilidade(this)">
+                    <div class="esquerda">
+                        <ion-icon name="lock-open" class="icone-sidebar"></ion-icon>
+                        <div class="descricao-visibilidade">Pública</div>
+                    </div>
+                    <div class="direita">
+                        <ion-icon name="checkmark-sharp" class="icone-check"></ion-icon>
+                    </div>
+                </li>
+                <li class="reservada" onclick="selecionarVisibilidade(this)">
+                    <div class="esquerda">
+                        <ion-icon name="lock-closed" class="icone-sidebar"></ion-icon>
+                        <div class="descricao-visibilidade">Reservada</div>
+                    </div>
+                    <div class="direita">
+                        <ion-icon name="checkmark-sharp" class="icone-check"></ion-icon>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="tela-principal oculto">
         <div class="barra-superior">
             <img src="./imagens/logo.png" class="logo" />
-            <ion-icon name="people" class="icone-menu"></ion-icon>
+            <div onclick="abrirMenuLateral()"><ion-icon name="people" class="icone-menu"></ion-icon></div>
         </div>
 
         <ul class="mensagens">
@@ -52,39 +100,11 @@
         </ul>
 
         <div class="barra-inferior">
-            <input placeholder="Escreva aqui...">
+            <div class="mensagem-enviada">
+                <input placeholder="Escreva aqui...">
+                <div class="info-mensagem-reservada oculto">Enviando mensagem para Maria (reservadamente)</div>
+            </div>
             <ion-icon name="paper-plane-outline" class="icone-enviar"></ion-icon>
-        </div>
-    </div>
-
-    <div class="menu-lateral">
-        <div class="sidebar">
-            <div class="texto"></div>
-            <ul class="participantes">
-                <li class="todos">
-                    <div class="icone-todos"></div>
-                    <div class="nome-participante"></div>
-                    <div class="icone-check oculto"></div>
-                </li>
-                <li class="participante">
-                    <div class="icone-participante"></div>
-                    <div class="nome-participante"></div>
-                    <div class="icone-check oculto"></div>
-                </li>
-            </ul>
-            <div class="texto"></div>
-            <ul class="visibilidade">
-                <li class="publica">
-                    <div class="icone-publico"></div>
-                    <div class="descricao-visibilidade"></div>
-                    <div class="icone-check oculto"></div>
-                </li>
-                <li class="reservada">
-                    <div class="icone-reservada"></div>
-                    <div class="descricao-visibilidade"></div>
-                    <div class="icone-check oculto"></div>
-                </li>
-            </ul>
         </div>
     </div>
 
