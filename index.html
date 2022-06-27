@@ -16,9 +16,9 @@
 </head>
 <body>
     <div class="tela-de-entrada">
-        <img src="./imagens/logo.png" class="logo" />
+        <img src="./imagens/logo.png" class="logo">
         <input placeholder="Digite seu nome">
-        <button class="botao-entrar" onclick="entrarBatePapo()">Entrar</button>
+        <button class="botao-entrar" onclick="enviarNomeUsuario()">Entrar</button>
     </div>
 
     <div class="menu-lateral oculto">
@@ -26,24 +26,6 @@
         <div class="sidebar">
             <div class="texto">Escolha um contato para enviar mensagem:</div>
             <ul class="participantes">
-                <li class="todos" onclick="selecionarParticipante(this)">
-                    <div class="esquerda">
-                        <ion-icon name="people" class="icone-sidebar"></ion-icon>
-                        <div class="nome-participante">Todos</div>
-                    </div>
-                    <div class="direita">
-                        <ion-icon name="checkmark-sharp" class="icone-check"></ion-icon>
-                    </div>
-                </li>
-                <li class="participante" onclick="selecionarParticipante(this)">
-                    <div class="esquerda">
-                        <ion-icon name="person-circle-sharp" class="icone-sidebar"></ion-icon>
-                        <div class="nome-participante">João</div>
-                    </div>
-                    <div class="direita">
-                        <ion-icon name="checkmark-sharp" class="icone-check"></ion-icon>
-                    </div>
-                </li>
             </ul>
             <div class="texto">Escolha a visibilidade:</div>
             <ul class="visibilidade">
@@ -72,43 +54,26 @@
     <div class="tela-principal oculto">
         <div class="barra-superior">
             <img src="./imagens/logo.png" class="logo" />
-            <div onclick="abrirMenuLateral()"><ion-icon name="people" class="icone-menu"></ion-icon></div>
+            <ion-icon name="people" class="icone-menu"></ion-icon>
         </div>
 
         <ul class="mensagens">
-            <li class="mensagem-status">
-                <div class="horario">(09:21:45)</div>
-                <div class="nome"><em>João</em></div>
-                <div class="mensagem">entrou na sala</div>
-            </li>
-
-            <li class="mensagem-normal">
-                <div class="horario">(09:22:28)</div>
-                <div class="direcionamento">
-                    <em>João</em> para <em>Todos</em>:
-                </div>
-                <div class="mensagem">Bom dia</div>
-            </li>
-
-            <li class="mensagem-reservada">
-                <div class="horario">(09:22:48)</div>
-                <div class="direcionamento">
-                    <em>João</em> para <em>Maria</em>:
-                </div>
-                <div class="mensagem">Oieeee!</div>
-            </li>
+            
         </ul>
 
         <div class="barra-inferior">
             <div class="mensagem-enviada">
-                <input placeholder="Escreva aqui...">
+                <input type="text" placeholder="Escreva aqui...">
                 <div class="info-mensagem-reservada oculto">Enviando mensagem para Maria (reservadamente)</div>
             </div>
-            <ion-icon name="paper-plane-outline" class="icone-enviar"></ion-icon>
+            <div class="enviar" onclick="enviarMensagem()">
+                <ion-icon name="paper-plane-outline" class="icone-enviar"></ion-icon>
+            </div>
         </div>
     </div>
 
     <script src="https://unpkg.com/ionicons@5.4.0/dist/ionicons.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
     <script src="./js/script.js"></script>
 </body>
 </html>

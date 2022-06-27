@@ -8,10 +8,9 @@ body {
     background-color: #F3F3F3;
 }
 .tela-de-entrada {
-    width: 100vw;
+    width: 100%;
     height: 100%;
     background-color: white;
-    padding: 72px 57px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -20,12 +19,13 @@ body {
     top: 0;
     left: 0;
 }
-.tela-de-entrada > .logo {
+.tela-de-entrada .logo {
     width: 130px;
     height: 92px;
+    margin-top: 72px;
     margin-bottom: 94px;
 }
-.tela-de-entrada > input {
+.tela-de-entrada input {
     width: 261px;
     height: 54px;
     margin-bottom: 15px;
@@ -44,6 +44,7 @@ body {
     border: 1px solid #E7E7E7;
     border-radius: 9px;
     background-color: #E7E7E7;
+    cursor: pointer;
 
     font-weight: 400;
     font-size: 18px;
@@ -72,7 +73,7 @@ body {
     left: 0;
     z-index: 1;
 }
-.barra-superior > .logo {
+.barra-superior .logo {
     width: 75px;
     height: 53px;
     margin-left: 22px;
@@ -84,10 +85,10 @@ body {
 .mensagens {
     margin-top: 106px;
     margin-bottom: 106px;
-    width: 100%;
+    width: 100vw;
     z-index: 0;
 }
-.mensagem-status, .mensagem-normal, .mensagem-reservada {
+.status, .message, .private_message {
     padding-top: 11.8px;
     padding-bottom: 11.8px;
     padding-left: 9px;
@@ -96,13 +97,13 @@ body {
     display: flex;
     flex-wrap: wrap;
 }
-.mensagem-status {
+.status {
     background-color: #DCDCDC;
 }
-.mensagem-normal {
+.message {
     background-color: white;
 }
-.mensagem-reservada {
+.private_message {
     background-color: #FFDEDE;
 }
 .horario {
@@ -177,9 +178,14 @@ em {
     font-size: 12px;
     line-height: 25px;
 }
-.barra-inferior > .icone-enviar {
-    font-size: 26px;
+.enviar {
+    width: 26px;
+    height: 26px;
     margin-right: 27px;
+}
+.icone-enviar {
+    font-size: 26px;
+    cursor: pointer;
 }
 .menu-lateral {
     width: 100%;
